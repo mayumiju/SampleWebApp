@@ -6,7 +6,7 @@ pipeline {
 	}
 
 	environment {
-		registry = "juliamayt/sampleWebApp"
+		registry = "juliamayt/samplewebapp"
 		registryCredential = 'dockerhub'
 	}
 
