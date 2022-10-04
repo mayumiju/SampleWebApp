@@ -90,5 +90,12 @@ pipeline {
 				sh "docker rmi $registry:v1"
 			}
 		}
+
+		stage ('Kubernetes Deploy'){
+		    agent {label 'KOPS'}
+		        steps {
+		            sh "helm upgrade --install --force samplewebapp-stack helm/samplewebappcharts --namespace prod"
+		        }
+		}
 	}
 }
